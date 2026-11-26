@@ -1,0 +1,30 @@
+ID,nombre,masa_g,masa_kg,subsistema,tipo_movimiento,estado_medicion,observaciones
+1,Paleta generadora de oleaje,148.00,0.14800,Generador de oleaje,Oscilatorio,Medido,Paleta de acrilico
+2,Varilla guia de la paleta,14.50,0.01450,Generador de oleaje,Asociado al movimiento de paleta,Medido,Verificar si la varilla se traslada u oscila con la paleta
+3,Soporte de articulacion del mecanismo,13.50,0.01350,Generador de oleaje,Articulado,Medido,Parte del mecanismo de transmision
+4,Manivela o eslabon de entrada,6.50,0.00650,Generador de oleaje,Rotacional,Medido,Radio medido 0.034 m corresponde a la manivela instalada
+5,Servomotor de rotacion continua TD-8135MG,65.53,0.06553,Generador de oleaje,Rotacional y montado en base,Medido,Actuador de la paleta
+6,Tornillo de fijacion de la manivela al eje,0.49,0.00049,Generador de oleaje,Rotacional solidario al eje,Medido,Fijacion de manivela
+7,Conjunto de 20 imanes de neodimio,42.23,0.04223,Captacion electromagnetica,Traslacion vertical con boya,Medido,Forma parte del rotor movil
+8,Tornillos de sujecion del servomotor (4 unidades),1.18,0.00118,Generador de oleaje,Fijo en soporte,Medido,Fijacion del servomotor
+9,Adaptador o acoplador del eje,1.30,0.00130,Generador de oleaje,Rotacional solidario al eje,Medido,Acoplamiento al eje del servomotor
+10,Pasadores metalicos de articulacion,0.29,0.00029,Generador de oleaje,Articulado,Medido,Pasadores de las uniones
+11,Biela de transmision,2.73,0.00273,Generador de oleaje,Oscilatorio articulado,Medido,Longitud de biela del codigo aun por verificar
+12,Base de montaje del servomotor,25.27,0.02527,Generador de oleaje,Fijo en tanque durante prueba,Medido,La base actual presenta flexibilidad
+13,Conjunto estator-bobina y soporte superior,185.00,0.18500,Captacion electromagnetica,Fijo a los bordes de la piscina,Medido,Cilindro fijo y cinco rollos de alambre de cobre
+14,Aro guia solidario a la boya,12.94,0.01294,Captacion electromagnetica,Traslacion vertical con boya,Medido,Se desplaza unido a la boya
+15,Cuerpo flotante de la boya,91.87,0.09187,Captacion electromagnetica,Traslacion vertical,Medido,Masa individual de la boya
+16,Soporte de instrumentacion electrica,,,Instrumentacion,Fijo,Pesaje pendiente,No se ha proporcionado masa
+17,Tapa superior del cilindro portaimanes,5.40,0.00540,Captacion electromagnetica,Traslacion vertical con rotor,Medido,Tapa superior del cilindro movil
+18,Sensor ultrasonico HC-SR04,7.35,0.00735,Instrumentacion,Fijo en soporte,Peso medido,Sensor de distancia
+19,Sensor de corriente ACS712,3.20,0.00320,Instrumentacion,Fijo en placa,Medido,Confirmado como ACS712
+20,Sensor de voltaje ZMPT101B,18.97,0.01897,Instrumentacion,Fijo en placa,Medido,Modulo de medicion de voltaje
+21,Placa de control ELEGOO MEGA R3,34.44,0.03444,Instrumentacion,Fijo,Medido,Placa de control
+22,Modulo de visualizacion OLED,3.15,0.00315,Instrumentacion,Fijo,Medido,Modulo OLED
+23,Sensor digital de temperatura DS18B20,22.71,0.02271,Instrumentacion,Fijo o sonda montada,Medido,Verificar montaje de la sonda
+24,Seccion inferior de acoplamiento del cilindro portaimanes,15.56,0.01556,Captacion electromagnetica,Traslacion vertical con boya,Medido,Se enrosca directamente a la boya
+25,Cuerpo principal perforado del cilindro portaimanes,28.34,0.02834,Captacion electromagnetica,Traslacion vertical con rotor,Medido,Aloja los imanes
+26,Soporte principal del sensor ultrasónico,106.87,0.10687,Instrumentacion,Fijo,Medido,Soporte estructural del HC-SR04
+27,Soporte inferior del conjunto ultrasónico,7.47,0.00747,Instrumentacion,Fijo,Medido,Soporte del HC-SR04
+28,Soporte superior del conjunto ultrasónico,4.91,0.00491,Instrumentacion,Fijo,Medido,Soporte del HC-SR04
+29,Guia o retencion inferior de la boya,14.86,0.01486,Guia del conjunto flotante,Apoyado en el fondo; no solidario a la boya,Medido,Se excluye de la masa movil de la boya

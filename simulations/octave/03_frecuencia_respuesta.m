@@ -3,60 +3,53 @@ clear;
 close all;
 
 % ============================================================
-% MODELO 03
-% Barrido de frecuencia
+% MODELO 03 - RESPUESTA EN FRECUENCIA
+% Análisis de sensibilidad del SDOF lineal con parámetros provisionales.
+% La frecuencia de PWM 1600 us se muestra como referencia medida.
+% No corresponde al ensayo actual de PWM 2000 us.
 % ============================================================
 
-m = 100;
-c = 50;
-k = 2000;
+script_dir = fileparts(mfilename('fullpath'));
+addpath(script_dir);
+cfg = marvolt_load_config();
 
-alpha = 1000;
-
-H = 1.0;
-
+m = cfg.physical.buoy.moving_assembly_dry_mass_kg; % kg, masa seca
+c = cfg.mechanical.buoy_model.damping_N_s_per_m;   % provisional
+k = cfg.mechanical.buoy_model.stiffness_N_per_m;   % provisional
+alpha = cfg.mechanical.buoy_model.force_height_coefficient_N_per_m; % provisional
+H = cfg.experiment.wave_height_scenarios_m(2); % escenario medio, no medido
 F0 = alpha * H;
 
-tspan = [0 60];
-x0 = [0; 0];
+omega_ref = cfg.experiment.measured_servo_reference.angular_velocity_rad_s;
+omega_n = sqrt(k/m);
+zeta = c / (2*sqrt(k*m));
 
-% Frecuencia angular [rad/s]
-omega_values = linspace(0.5, 5.0, 40);
+% Barrido amplio para visualizar la respuesta del modelo matemático.
+% No identifica la resonancia física mientras c y k no estén calibrados.
+omega_values = linspace(0.1, 1.2*omega_n, 180);
 
-amplitudes = zeros(size(omega_values));
+% Amplitud estacionaria exacta del SDOF lineal ante fuerza sinusoidal:
+% X = F0 / sqrt((k-m*w^2)^2 + (c*w)^2)
+denominator = sqrt((k - m.*omega_values.^2).^2 + (c.*omega_values).^2);
+amplitudes = F0 ./ denominator;
+frequency_hz = omega_values / (2*pi);
 
-for i = 1:length(omega_values)
-
-    omega = omega_values(i);
-
-    f = @(t, x) [
-        x(2);
-        (F0*sin(omega*t) - c*x(2) - k*x(1)) / m
-    ];
-
-    [t, x] = ode45(f, tspan, x0);
-
-    inicio_estacionario = round(length(t) * 0.7);
-
-    x_ss = x(inicio_estacionario:end, 1);
-
-    amplitudes(i) = max(abs(x_ss));
-
-end
-
-% Convertir frecuencia angular a Hz
-frecuencia_hz = omega_values / (2*pi);
-
-% ============================================================
-% GRAFICA
-% ============================================================
+fprintf('\nModelo 03 - Barrido matemático de frecuencia\n');
+fprintf('Masa seca usada: %.5f kg; masa añadida no incluida.\n', m);
+fprintf('omega_n calculada con k provisional: %.3f rad/s (%.3f Hz).\n', omega_n, omega_n/(2*pi));
+fprintf('zeta calculada con c provisional: %.3f.\n', zeta);
+fprintf('Referencia medida a PWM 1600 us: %.3f rad/s (%.4f Hz).\n', omega_ref, omega_ref/(2*pi));
+fprintf('PWM 2000 us: velocidad todavía no medida.\n');
+fprintf('No interpretar este barrido como una curva validada del prototipo.\n\n');
 
 figure;
-
-plot(frecuencia_hz, amplitudes, '-o', 'LineWidth', 1.5);
-
+plot(frequency_hz, amplitudes, 'LineWidth', 1.5);
+hold on;
+y_limits = ylim;
+plot([omega_ref/(2*pi), omega_ref/(2*pi)], y_limits, '--');
+hold off;
 grid on;
-
-xlabel('Frecuencia de excitacion (Hz)');
-ylabel('Amplitud maxima (m)');
-title('MARVOLT-PA — Respuesta en frecuencia');
+xlabel('Frecuencia de excitación (Hz)');
+ylabel('Amplitud estacionaria calculada (m)');
+title('MARVOLT-PA - Respuesta en frecuencia del modelo provisional');
+legend('Respuesta matemática', 'Referencia medida PWM 1600 us', 'Location', 'best');

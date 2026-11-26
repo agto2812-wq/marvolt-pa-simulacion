@@ -1,0 +1,23 @@
+{
+  "current_reference_trial": {
+    "water_depth_m": 0.05,
+    "servo_pwm_us": 2000,
+    "servo_direction": "clockwise",
+    "servo_rpm": null,
+    "servo_angular_velocity_rad_s": null,
+    "status": "qualitative_wave_generation_observed; speed not yet measured"
+  },
+  "measured_servo_reference": {
+    "pwm_us": 1600,
+    "direction": "clockwise",
+    "revolutions_counted": 10,
+    "elapsed_time_s": 51.37,
+    "rpm": 11.68,
+    "frequency_hz": 0.1947,
+    "period_s": 5.137,
+    "angular_velocity_rad_s": 1.223,
+    "status": "measured_reference_under_light_load; not transferable to PWM 2000"
+  },
+  "wave_height_scenarios_m": [0.017, 0.0238, 0.0306],
+  "wave_height_scenarios_status": "theoretical projections from 25-45 percent of ideal geometric stroke 0.068 m; not measured"
+}

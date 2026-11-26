@@ -1,0 +1,15 @@
+{
+  "mechanism": {
+    "crank_radius_m": 0.034,
+    "connecting_rod_length_m": 0.12,
+    "connecting_rod_length_status": "provisional_from_previous_code; verify against the assembled mechanism"
+  },
+  "buoy_model": {
+    "damping_N_s_per_m": 50.0,
+    "damping_status": "provisional_not_experimentally_identified",
+    "stiffness_N_per_m": 2000.0,
+    "stiffness_status": "provisional_not_experimentally_identified",
+    "force_height_coefficient_N_per_m": 1000.0,
+    "force_model_status": "provisional_relation_F0_equals_alpha_times_H; not hydrodynamically calibrated"
+  }
+}

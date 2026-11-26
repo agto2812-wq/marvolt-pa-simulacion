@@ -1,0 +1,25 @@
+{
+  "metadata": {
+    "project": "MARVOLT-PA",
+    "as_of_date": "2026-11-25",
+    "status": "preliminary_experimental_characterization",
+    "units": "SI unless otherwise stated"
+  },
+  "constants": {
+    "gravity_m_s2": 9.81,
+    "water_density_kg_m3": 1000.0
+  },
+  "tank": {
+    "operating_water_depth_m": 0.05,
+    "internal_length_m": 0.70,
+    "internal_height_m": 0.28,
+    "internal_width_m": 0.15
+  },
+  "buoy": {
+    "body_mass_kg": 0.09187,
+    "moving_assembly_dry_mass_kg": 0.19634,
+    "added_mass_kg": null,
+    "effective_mass_kg": null,
+    "mass_note": "Dry mass includes the buoy body, guide ring fixed to the buoy, 20 magnets and the three 3D-printed sections of the moving magnet cylinder. It excludes the fixed stator and the bottom guide/retainer."
+  }
+}

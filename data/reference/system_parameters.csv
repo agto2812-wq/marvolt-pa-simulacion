@@ -1,0 +1,16 @@
+parametro,valor,unidad,estado,observaciones
+profundidad_operativa,0.05,m,Referencia experimental,Condicion operativa actual
+masa_cuerpo_boya,0.09187,kg,Medido,Masa individual del cuerpo flotante
+masa_mecanica_seca,0.19634,kg,Suma de masas medidas,Incluye boya aro 20 imanes y las tres piezas del cilindro movil
+masa_anadida,,kg,Pendiente,Contribucion hidrodinamica no caracterizada
+masa_efectiva,,kg,Pendiente,No asignar aun como valor definitivo
+radio_manivela,0.034,m,Medido,Distancia eje-centro del pasador por confirmar geometricamente
+carrera_geometrica_ideal,0.068,m,Calculado,S_geom=2r; no equivale a carrera efectiva medida
+longitud_biela,0.12,m,Provisional,Valor heredado del codigo; verificar fisicamente
+rpm_pwm1600,11.68,rpm,Medido bajo carga ligera,10 revoluciones en 51.37 s
+omega_pwm1600,1.223,rad/s,Calculado,Referencia a PWM 1600 us
+rpm_pwm2000,,rpm,Pendiente,No hay encoder ni conteo cuantitativo
+omega_pwm2000,,rad/s,Pendiente,No calcular desde el ancho PWM
+coeficiente_amortiguamiento,50,N*s/m,Provisional,No calibrado experimentalmente
+rigidez_equivalente,2000,N/m,Provisional,No caracterizada hidrostáticamente
+coeficiente_fuerza_altura,1000,N/m,Provisional,F0=alpha*H no es formulacion hidrodinamica validada
